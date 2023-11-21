@@ -12,12 +12,13 @@ export const createProduct = async (req, res) => {
 };
 
 export const getAllProducts = async (req, res) => {
-   // console.log(req);
+  // console.log(req);
   try {
     const products = await ProductModel.find().sort({ createdAt: -1 });
     console.log(products);
     res.status(200).json(products);
   } catch (error) {
+    console.log(error);
     res.status(500).json('failed to get all products');
   }
 };
