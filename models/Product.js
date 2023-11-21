@@ -10,6 +10,10 @@ const ProductSchema = new Schema({
     type: 'string',
     required: true
   },
+  price: {
+   type: 'string',
+   required: true
+  },
   product_location: {
     type: 'string',
     required: true
