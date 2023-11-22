@@ -38,7 +38,7 @@ export const searcProduct = async (req, res) => {
     const result = await ProductModel.aggregate([
       {
         $search: {
-          index: 'furniture',
+          index: 'productModel',
           text: {
             query: req.params.key,
             path: {
@@ -48,8 +48,10 @@ export const searcProduct = async (req, res) => {
         }
       }
     ]);
+    console.log(result);
     res.status(200).json(result);
   } catch (error) {
+    console.log(error);
     res.status(200).json('Failed to search for products');
   }
 };
